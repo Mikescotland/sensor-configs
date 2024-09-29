@@ -54,7 +54,7 @@ ota:
 ################################################################################
 packages:
   remote_package:
-    url: https://github.com/ElevatedSensors/sensor-configs
+    url: https://github.com/mikescotland/sensor-configs
     ref: main
     files: ['bed-presence-mk1/base.yaml']
     refresh: 1s
