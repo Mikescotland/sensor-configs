@@ -38,7 +38,14 @@ sensor:
   - or:
     - delta: 0.1                  # only send if sensor changes by +/-0.1% (eliminate sensor noise)
     - throttle: 60s               # but still update every minute
-
+- platform: pulse_counter
+  pin: ${sensor_gpio}
+  name: ${sensor_name} Pressuretest
+  id: bed_sensor_${sensor_id}
+  update_interval: 0.5s
+  unit_of_measurement: '%'
+  icon: mdi:gauge
+  
 number:
 - platform: template
   name: ${sensor_name} Unoccupied Pressure
