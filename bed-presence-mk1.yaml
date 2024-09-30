@@ -22,13 +22,13 @@ esphome:
   min_version: 2024.6.0
   name_add_mac_suffix: true
   project:
-    name: ElevatedSensors.BedPresenceMk1
+    name: PolComp.BedPresenceMk1
     version: "DIY"
   platformio_options:
     board_build.flash_mode: dio # dio flash_mode fixes issue where board bootloops using esp-idf
 
 esp32:
-  board: esp32-c3-devkitm-1
+  board: esp32dev
   framework:
     type: esp-idf # using arduino causes board to reset multiple times/day
 
