@@ -32,12 +32,7 @@ sensor:
       datapoints:
         - 45000 -> 100.0         # 50000Hz (sensor shorted/0ohms)
         - 9000 -> 0.0           # 4600Hz (breakforce/10k)
-  - clamp:
-      max_value: 100.0
-      min_value: 0.0
-  - or:
-    - delta: 0.1                  # only send if sensor changes by +/-0.1% (eliminate sensor noise)
-    - throttle: 60s               # but still update every minute
+  
 
   
 number:
