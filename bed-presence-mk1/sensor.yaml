@@ -26,25 +26,8 @@ sensor:
   update_interval: 0.5s
   unit_of_measurement: '%'
   icon: mdi:gauge
-  filters:
-  - calibrate_linear:             # scale pulses/minute to 0->100%
-      method: least_squares
-      datapoints:
-        - 2400000 -> 100.0         # 50000Hz (sensor shorted/0ohms)
-        - 600000 -> 0.0           # 4600Hz (breakforce/10k)
-  - clamp:
-      max_value: 100.0
-      min_value: 0.0
-  - or:
-    - delta: 0.1                  # only send if sensor changes by +/-0.1% (eliminate sensor noise)
-    - throttle: 60s               # but still update every minute
-- platform: pulse_counter
-  pin: ${sensor_gpio}
-  name: ${sensor_name} Pressuretest
-  id: bed_sensor2_${sensor_id}
-  update_interval: 0.5s
-  unit_of_measurement: '%'
-  icon: mdi:gauge
+ 
+
   
 number:
 - platform: template
