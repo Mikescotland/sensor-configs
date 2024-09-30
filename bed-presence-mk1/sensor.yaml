@@ -41,7 +41,7 @@ sensor:
 - platform: pulse_counter
   pin: ${sensor_gpio}
   name: ${sensor_name} Pressuretest
-  id: bed_sensor_${sensor_id}
+  id: bed_sensor2_${sensor_id}
   update_interval: 0.5s
   unit_of_measurement: '%'
   icon: mdi:gauge
