@@ -36,7 +36,9 @@ sensor:
   - clamp:
       max_value: 100.0
       min_value: 0.0
-  
+  - or:
+    - delta: 0.1                  # only send if sensor changes by +/-0.1% (eliminate sensor noise)
+    - throttle: 60s               # but still update every minute
   
 number:
 - platform: template
